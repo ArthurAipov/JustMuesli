@@ -1,0 +1,148 @@
+﻿<Page x:Class="JustMuesli.Pages.OrderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:JustMuesli.Pages"
+      mc:Ignorable="d"
+      d:DesignHeight="700"
+      d:DesignWidth="800"
+      Title="OrderPage">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90" />
+            <RowDefinition />
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="270" />
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="1"
+                Grid.Row="1"
+                BorderThickness="3"
+                BorderBrush="LightGray"
+                Margin="12"
+                CornerRadius="6">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            Margin="10,30,0,0">
+                    <TextBlock Text="Muesli" />
+                    <TextBlock Margin="85,0,0,0"
+                               Width="100"
+                               Text="0"
+                               TextAlignment="Center"
+                               Name="PriceForMuesli" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            Margin="10,10,0,0">
+                    <TextBlock Text="Shipping" />
+                    <TextBlock Margin="73,0,0,0"
+                               Width="100"
+                               Text="0"
+                               TextAlignment="Center"
+                               Name="PriceForShipping" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            Margin="10,10,0,0">
+                    <TextBlock Text="Taxes" />
+                    <TextBlock Margin="92,0,0,0"
+                               Width="100"
+                               Text="0"
+                               Name="TextBlockTaxes"
+                               TextAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            Margin="10,10,0,0">
+                    <TextBlock Text="Grand Total"
+                               FontWeight="Medium" />
+                    <TextBlock Margin="57,0,0,0"
+                               Width="100"
+                               Text="0"
+                               Name="TextBlockAllPrice"
+                               TextAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <StackPanel HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="20,10,0,0">
+            <TextBlock Text="Just Muesli"
+                       FontWeight="DemiBold"
+                       FontSize="30" />
+            <TextBlock HorizontalAlignment="Center"
+                       Text="Order"
+                       FontSize="17" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="20,0,0,0"
+                    Grid.Row="2">
+            <Button Content="back to menu"
+                    Width="130"
+                    Name="ButtonBack"
+                    Click="ButtonBack_Click" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin="0,0,20,0">
+            <Button Content="submit order"
+                    Width="140"
+                    Name="ButtonSubmit"
+                    Click="ButtonSubmit_Click" />
+        </StackPanel>
+        <DataGrid Grid.Row="1"
+                  Margin="10,0,0,0"
+                  Name="DataGridMusliMix"
+                  IsReadOnly="True"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name"
+                                    Binding="{Binding MuesliMix.Name}"
+                                    Width="*" />
+                <DataGridTemplateColumn Width="*"
+                                        Header="Size">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <CheckBox Name="CheckeBoxSize"
+                                          IsChecked="{Binding Size, UpdateSourceTrigger=PropertyChanged}"
+                                           />
+                                <TextBlock Text="XXL" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Width="*"
+                                    Header="Price"
+                                    Binding="{Binding MuesliMix.Price}" />
+                <DataGridTemplateColumn Header="Quantity"
+                                        Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Name="TextBoxQuantity"
+                                     TextAlignment="Center"
+                                     Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}"
+                                      />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Total"
+                                        Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Name="TextBlockTotalPrice"
+                                       Text="{Binding TotalPrice}" 
+                                       TextAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

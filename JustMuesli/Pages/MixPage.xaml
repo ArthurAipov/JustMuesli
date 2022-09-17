@@ -1,0 +1,355 @@
+﻿<Page x:Class="JustMuesli.Pages.MixPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:JustMuesli.Pages"
+      mc:Ignorable="d"
+      d:DesignHeight="700"
+      d:DesignWidth="800"
+      Title="MixPage">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="101" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="380" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="10,10,10,10">
+            <TextBlock Text="Just Muesli"
+                       FontSize="35"
+                       FontWeight="SemiBold" />
+            <TextBlock Text="Muesli Mixer"
+                       FontSize="20" />
+        </StackPanel>
+        <TabControl Grid.Row="1"
+                    Margin="11,11,11,11">
+            <TabItem Header="Basics"
+                     Width="auto"
+                     Name="TIBasics">
+                <ListView Name="ListViewMixer"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel />
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Height="100">
+                                <StackPanel HorizontalAlignment="Left"
+                                            VerticalAlignment="Center"
+                                            Orientation="Horizontal">
+                                    <Image Height="80"
+                                           Source="/Resource/Screenshot 2022-07-29 121948.png" />
+                                    <StackPanel VerticalAlignment="Bottom">
+                                        <TextBlock Margin="15,0,0,0"
+                                                   Text="{Binding NameDE}"
+                                                   Name="TBNameDe" />
+                                        <TextBlock Margin="15,5,0,0"
+                                                   Text="{Binding PriceFrP}" />
+                                        <StackPanel Margin="15,10,0,0"
+                                                    VerticalAlignment="Bottom"
+                                                    Orientation="Horizontal">
+                                            <TextBlock>
+                                                <Hyperlink>
+                                                    more information
+                                                </Hyperlink>
+                                            </TextBlock>
+                                            <Button Margin="10,0,0,0"
+                                                    Name="ButtonAddToMuesli"
+                                                    Content="add to muesli"
+                                                    Width="120"
+                                                    Click="ButtonAddToMuesli_Click" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Cereal"
+                     Width="auto"
+                     Name="TICereal">
+                <ListView Name="ListViewMixerCereals"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel />
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Height="100">
+                                <StackPanel HorizontalAlignment="Left"
+                                            VerticalAlignment="Center"
+                                            Orientation="Horizontal">
+                                    <Image Height="80"
+                                           Source="/Resource/Screenshot 2022-07-29 121948.png" />
+                                    <StackPanel VerticalAlignment="Bottom">
+                                        <TextBlock Margin="15,0,0,0"
+                                                   Text="{Binding NameDE}" />
+                                        <TextBlock Margin="15,5,0,0"
+                                                   Text="{Binding PriceFrP}" />
+                                        <StackPanel Margin="15,10,0,0"
+                                                    VerticalAlignment="Bottom"
+                                                    Orientation="Horizontal">
+                                            <TextBlock>
+                                                <Hyperlink>
+                                                    more information
+                                                </Hyperlink>
+                                            </TextBlock>
+                                            <Button Margin="10,0,0,0"
+                                                    Name="ButtonAddToMuesliIngredient"
+                                                    Content="add to muesli"
+                                                    Click="ButtonAddToMuesli_Click"
+                                                    Width="120" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Fruit"
+                     Width="auto"
+                     Name="TIFruits">
+                <ListView Name="ListViewMixerFruits"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel />
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Height="100">
+                                <StackPanel HorizontalAlignment="Left"
+                                            VerticalAlignment="Center"
+                                            Orientation="Horizontal">
+                                    <Image Height="80"
+                                           Source="/Resource/Screenshot 2022-07-29 121948.png" />
+                                    <StackPanel VerticalAlignment="Bottom">
+                                        <TextBlock Margin="15,0,0,0"
+                                                   Text="{Binding NameDE}" />
+                                        <TextBlock Margin="15,5,0,0"
+                                                   Text="{Binding PriceFrP}" />
+                                        <StackPanel Margin="15,10,0,0"
+                                                    VerticalAlignment="Bottom"
+                                                    Orientation="Horizontal">
+                                            <TextBlock>
+                                                <Hyperlink>
+                                                    more information
+                                                </Hyperlink>
+                                            </TextBlock>
+                                            <Button Margin="10,0,0,0"
+                                                    Name="ButtonAddToMuesli"
+                                                    Content="add to muesli"
+                                                    Click="ButtonAddToMuesli_Click"
+                                                    Width="120" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Nuts &amp; Co"
+                     Width="auto"
+                     Name="TINutsCo">
+                <ListView Name="ListViewMixerNutsCo"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel />
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Height="100">
+                                <StackPanel HorizontalAlignment="Left"
+                                            VerticalAlignment="Center"
+                                            Orientation="Horizontal">
+                                    <Image Height="80"
+                                           Source="/Resource/Screenshot 2022-07-29 121948.png" />
+                                    <StackPanel VerticalAlignment="Bottom">
+                                        <TextBlock Margin="15,0,0,0"
+                                                   Text="{Binding NameDE}" />
+                                        <TextBlock Margin="15,5,0,0"
+                                                   Text="{Binding PriceFrP}" />
+                                        <StackPanel Margin="15,10,0,0"
+                                                    VerticalAlignment="Bottom"
+                                                    Orientation="Horizontal">
+                                            <TextBlock>
+                                                <Hyperlink>
+                                                    more information
+                                                </Hyperlink>
+                                            </TextBlock>
+                                            <Button Margin="10,0,0,0"
+                                                    Name="ButtonAddToMuesli"
+                                                    Content="add to muesli"
+                                                    Click="ButtonAddToMuesli_Click"
+                                                    Width="120" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Choco"
+                     Width="auto"
+                     Name="TIChoco">
+                <ListView Name="ListViewMixerChoco"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel />
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Height="100">
+                                <StackPanel HorizontalAlignment="Left"
+                                            VerticalAlignment="Center"
+                                            Orientation="Horizontal">
+                                    <Image Height="80"
+                                           Source="/Resource/Screenshot 2022-07-29 121948.png" />
+                                    <StackPanel VerticalAlignment="Bottom">
+                                        <TextBlock Margin="15,0,0,0"
+                                                   Text="{Binding NameDE}" />
+                                        <TextBlock Margin="15,5,0,0"
+                                                   Text="{Binding PriceFrP}" />
+                                        <StackPanel Margin="15,10,0,0"
+                                                    VerticalAlignment="Bottom"
+                                                    Orientation="Horizontal">
+                                            <TextBlock>
+                                                <Hyperlink>
+                                                    more information
+                                                </Hyperlink>
+                                            </TextBlock>
+                                            <Button Margin="10,0,0,0"
+                                                    Name="ButtonAddToMuesli"
+                                                    Content="add to muesli"
+                                                    Click="ButtonAddToMuesli_Click"
+                                                    Width="120" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Specials"
+                     Width="auto"
+                     Name="TISpecials">
+                <ListView Name="ListViewMixerSpecials"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel />
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Height="100">
+                                <StackPanel HorizontalAlignment="Left"
+                                            VerticalAlignment="Center"
+                                            Orientation="Horizontal">
+                                    <Image Height="80"
+                                           Source="/Resource/Screenshot 2022-07-29 121948.png" />
+                                    <StackPanel VerticalAlignment="Bottom">
+                                        <TextBlock Margin="15,0,0,0"
+                                                   Text="{Binding NameDE}" />
+                                        <TextBlock Margin="15,5,0,0"
+                                                   Text="{Binding PriceFrP}" />
+                                        <StackPanel Margin="15,10,0,0"
+                                                    VerticalAlignment="Bottom"
+                                                    Orientation="Horizontal">
+                                            <TextBlock>
+                                                <Hyperlink>
+                                                    more information
+                                                </Hyperlink>
+                                            </TextBlock>
+                                            <Button Margin="10,0,0,0"
+                                                    Name="ButtonAddToMuesli"
+                                                    Content="add to muesli"
+                                                    Click="ButtonAddToMuesli_Click"
+                                                    Width="120" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </TabItem>
+        </TabControl>
+        <StackPanel Grid.Column="1"
+                    Grid.Row="1"
+                    Margin="10">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Name:     " />
+                <TextBox Name="TBName"
+                         Width="200"
+                         Text="{Binding Name}" />
+            </StackPanel>
+            <ListView Grid.Column="1"
+                      Grid.Row="1"
+                      Margin="0,10,0,0"
+                      Name="ListViewMixItems"
+                      Width="250"
+                      Height="390"
+                      HorizontalAlignment="Left"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      MouseDoubleClick="ListViewMixItems_MouseDoubleClick">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="10">
+                            <TextBlock Width="70"
+                                       Text="{Binding ActualWeight}" />
+                            <TextBlock Text="{Binding Muesli.NameDE}"
+                                       Name="TBIngredient"
+                                       Margin="10,0,0,0" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackPanel VerticalAlignment="Bottom"
+                        Margin="0,10,0,10">
+                <TextBlock Name="TextBlockPrice"
+                           Text="0 /600g" />
+                <TextBlock Name="TextBlockCalories"
+                           Text="0 kcal/ 100g" />
+                <Button Content="details"
+                        Width="130"
+                        Name="ButtonDetails"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        Margin="0,10,0,0"
+                        Click="ButtonDetails_Click" />
+            </StackPanel>
+            <Button Content="Back to menu"
+                    Name="ButtonBack"
+                    Click="ButtonBack_Click" />
+            <Button Margin="0,10,0,0"
+                    Content="Save muesli"
+                    Name="ButtonSave"
+                    Click="ButtonSave_Click" />
+        </StackPanel>
+    </Grid>
+</Page>
